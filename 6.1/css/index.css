@@ -1,0 +1,67 @@
+body,html{
+	height: 100%;
+	font-size:62.5% ;
+	max-width: 768px;
+	margin: 0 auto;
+}
+img{
+	max-width: 100%;
+	/*margin: 0px auto;*/
+}
+.swiper-container{
+	height: 100%;
+}
+.one{
+	background: url(../img/bg.jpg) no-repeat center;
+	background-size: cover;
+}
+.one img:nth-child(1){
+	position: absolute;
+	top:5rem ;
+	left: 0.5rem;
+}
+.img1{
+	position: absolute;
+	bottom:5rem ;
+	right: 1rem;
+}
+.two img:nth-child(1){
+	position: absolute;
+	width: 50%;
+	top:3rem ;
+	left: 1rem;
+	border: 0.5rem solid #FFFFFF;
+}
+.two img:nth-child(2){
+	position: absolute;
+	width: 77%;
+	bottom:5rem ;
+	right: 1rem;
+	border: 0.2rem solid #FFFFFF;
+}
+.two{
+	background: url(../img/bg2.jpeg) no-repeat center;
+	background-size: cover;
+}
+.three{
+	background: url(../img/bg3.jpeg) no-repeat center;
+	background-size: cover;
+}
+.three img:nth-child(1){
+	position: absolute;
+	top: 1rem;
+	width: 77%;
+	left: 0.5rem;
+}
+.three img:nth-child(2){
+	position: absolute;
+	top: 50%;
+	width: 77%;
+	right: 0.5rem;
+}
+.three img:nth-child(3){
+	position: absolute;
+	top: 80%;
+	width: 50%;
+	left: 0.5rem;
+}
