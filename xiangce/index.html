@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    	<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/hd.css"/>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide a">
+        	<span class="ani" swiper-animate-effect="bounce" swiper-animate-duration="0.5s" swiper-animate-delay="0.7s">苏州行</span>
+        	<img class="ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/b99b55c4c0f1d69ed423ccc3b78dbe97_hd.jpg" alt="" />
+        </div>
+        <div class="swiper-slide b">
+        	<span class="ani" swiper-animate-effect="shake" swiper-animate-duration="0.3s" swiper-animate-delay="0.8s">老大</span>
+        	<img class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/0b577190d156dce088ba26a916803504_hd.jpg" alt="" />
+        	
+        </div>
+        <div class="swiper-slide c">
+        	<img  class="ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0s" src="img/d968aa86c9d4a3254ada983750ab9ffb_big.jpg" alt="" />
+        	<span  class="ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">二哥</span>
+        	<img  class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" src="img/5d4913b82e162fb54dc54c85eca125a1_big.jpg" alt="" />
+        </div>
+        <div class="swiper-slide d">
+        	<img class="ani" swiper-animate-effect=" bounceInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0s" src="img/71b68689376e4b38ef213590b0aa40ea_hd.jpg" alt="" />
+        	<span class="ani" swiper-animate-effect=" rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">老三</span>
+        	<img class="ani" swiper-animate-effect=" bounceInRight" swiper-animate-duration="0.8s" swiper-animate-delay="0s" src="img/166d454766fa31b2c9374c1485ed222a_hd.jpg" alt="" />
+        </div>
+        <div class="swiper-slide e">
+        	<img class="ani" swiper-animate-effect=" rollIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.1s" src="img/10f92bf705ff9c7584a3a2981b65537a_hd.jpg" alt="" />
+        	<span class="ani" swiper-animate-effect=" rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">老小</span>
+        	<img class="ani" swiper-animate-effect=" rollIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s" src="img/891a20342e22a985ab971e63d56def65_hd.jpg" alt="" />
+        </div>
+        <div class="swiper-slide f">
+        	<span>我们</span>
+        	<img src="img/c0e88d6906f7a9501e56eb36b15e2b50_hd.jpg" alt="" />
+        	<img src="img/e64c5b8e18b1c26be8dfb2bdee438ec1_hd.jpg" alt="" />
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+    
+   
+</div>
+    <!--音乐区域-->
+    <div id="music">
+    	<img src="img/music-bg.jpg" id="music-bg"/>
+    	<img src="img/normalmusic.svg" id="music-m"/>
+<audio id="audio" src="audio/陈奕迅 - k歌之王 粤语.mp3" autoplay="autoplay" loop="loop"></audio>
+    </div>
+    
+    
+    
+    
+    
+
+    <!-- Swiper JS -->
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical',
+         onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    swiperAnimateCache(swiper); //隐藏动画元素 
+    swiperAnimate(swiper); //初始化完成开始动画
+  }, 
+  onSlideChangeEnd: function(swiper){ 
+    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+  } 
+    });
+    
+    //音乐动画
+    var musicBg =document.getElementById("music-bg");
+    var musicM =document.getElementById("music-m");
+    var music =document.getElementById("music");
+    var audio=document.getElementById("audio");
+    var musicNum=1;
+    music.onclick=function(){
+    	if(musicNum==1){
+    		//动图停止
+    		musicBg.style.display='none';
+    		//旋转停止
+    		musicM.style.animation='none';
+    		musicNum=2;
+    		//音频
+    		audio.pause();
+    	}else if(musicNum==2){
+    		musicBg.style.display='block';
+    		//旋转停止
+    		musicM.style.animation='move 2s infinite';
+    		musicNum=1;
+    		//音频    
+    		audio.play();
+    	}
+    }
+    
+    
+    
+    </script>
+</body>
+</html>
